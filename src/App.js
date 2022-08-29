@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import expenseData from './data.json';
+import { Fragment } from 'react';
+import Card from './components/UI/Card';
+import BalanceView from './components/BalanceView';
+import ExpensesChart from './components/Chart/ExpensesChart';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      <BalanceView />
+      <Card>
+        <h1>Spending - Last 7 Days</h1>
+        <ExpensesChart data={expenseData} />
+        <hr />
+        <div className="bottom-info">
+          <div>
+            <p>total this month</p>
+            <h2>$478.33</h2>
+          </div>
+          <div>
+            <p>+2.4%</p>
+            <p>from last month</p>
+          </div>
+        </div>
+      </Card>
+    </Fragment>
   );
 }
 
