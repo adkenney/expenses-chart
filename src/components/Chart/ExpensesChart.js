@@ -13,10 +13,9 @@ ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip);
 
 const ExpensesChart = props => {
   const options = {
-    responsive: true,
     elements: {
       bar: {
-        borderRadius: 5,
+        borderRadius: 3,
         borderSkipped: false,
         hoverBackgroundColor: 'hsl(186, 34%, 60%)',
       },
